@@ -132,17 +132,17 @@
 				<table cellpadding="5">
 					<tr>
 						<td><b>Parking</b></td>
-						<td><input type="checkbox" name="parking" value="parking" checked /></td>
+						<td><input type="checkbox" name="amenities[]" value="p" checked /></td>
 						<td><b>Wi-Fi</b></td>
-						<td><input type="checkbox" name="wifi" value="wifi" /></td>
+						<td><input type="checkbox" name="amenities[]" value="w"/></td>
 						<td><b>Laundry</b></td>
-						<td><input type="checkbox" name="laundry" value="laundry" /></td>
+						<td><input type="checkbox" name="amenities[]" value="l"/></td>
 						<td><b>Gym</b></td>
-						<td><input type="checkbox" name="gym" value="gym" /></td>
+						<td><input type="checkbox"  name="amenities[]" value="g" /></td>
 						<td><b>Swimming Pool</b></td>
-						<td><input type="checkbox" name="pool" value="pool" /></td>
+						<td><input type="checkbox" name="amenities[]" value="pl" /></td>
 						<td><b>Spa</b></td>
-						<td><input type="checkbox" name="spa" value="spa" /></td>
+						<td><input type="checkbox" name="amenities[]" value="s"/></td>
 					</tr>
 				</table>
 			</fieldset>

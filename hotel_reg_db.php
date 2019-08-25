@@ -39,12 +39,59 @@ $qdroomno = $_POST["qdroomno"];
 $qdroomprice = $_POST["qdroomprice"];
 $sturoomno = $_POST["sturoomno"];
 $sturoomprice = $_POST["sturoomprice"];
-$parking = $_POST["parking"];
-$wifi = $_POST["wifi"];
-$laundry = $_POST["laundry"];
-$gym = $_POST["gym"];
-$pool = $_POST["pool"];
-$spa = $_POST["spa"];
+$amen = $_POST["amenities"];
+$arrlength = count($amen);
+$parking = "false";
+$wifi = "false";
+$laundry = "false";
+$gym = "false";
+$pool = "false";
+$spa = "false";
+
+for($x = 0; $x < $arrlength; $x++) {
+	$res = strcmp($amen[$x],"p");
+	if(res == 0) {
+		$parking="true";
+	}
+	else {
+		$parking="false";
+	}
+	$res = strcmp($amen[$x],"w");
+	if($res == 0) {
+		$wifi="true";
+	}
+	else {
+		$wifi="false";
+	}
+	$res = strcmp($amen[$x],"l");
+	if($res == 0) {
+		$laundry="true";
+	}
+	else {
+		$laundry="false";
+	}
+	$res = strcmp($amen[$x],"g");
+	if($res == 0) {
+		$gym="true";
+	}
+	else {
+		$gym="false";
+	}
+	$res = strcmp($amen[$x],"pl");
+	if($res == 0) {
+		$pool="true";
+	}
+	else {
+		$pool="false";
+	}
+	$res = strcmp($amen[$x],"s");
+	if($res == 0) {
+		$spa="true";
+	}
+	else {
+		$spa="false";
+	}
+}
 $pass = $_POST["passone"];
 
 
@@ -55,8 +102,7 @@ $_SESSION['username'] = $emailid;
 $_SESSION['hotelname'] = $hotelname;
 $_SESSION['licenseno'] = $licenseno;
 
-$sqlone = "INSERT INTO hotel_details (hotelname, ownername, licenseno, hotelrating, address, city, pin_code, state, country, mobileno, altmobileno, emailid, altemailid, stdroomno, stdroomprice, delroomno, delroomprice, qdroomno,$qdroomprice, sturoomno, sturoomprice, parking, wifi, laundry, gym, pool, spa)
-VALUES ('$hotelname','$ownername','$licenseno','$hotelrating','$address','$city','$pin_code','$state','$country','$mobileno','$altmobileno','$emailid','$altemailid','$stdroomno','$stdroomprice','$delroomno','$delroomprice','$qdroomno','$qdroomprice','$sturoomno','$sturoomprice','$parking','$wifi','$laundry','$gym','$pool','$spa')";
+$sqlone = "INSERT INTO hotel_details (hotelname, ownername, licenseno, dateofestablishment, hotelrating, address, city, pin_code, state, country, mobileno, altmobileno, emailid, altemailid, stdroomno, stdroomprice, delroomno, delroomprice, qdroomno,qdroomprice, sturoomno, sturoomprice, parking, wifi, laundry, gym, pool, spa) VALUES ('$hotelname','$ownername','$licenseno','$dateofestablishment','$hotelrating','$address','$city','$pincode','$state','$country','$mobileno','$altmobileno','$emailid','$altemailid','$stdroomno','$stdroomprice','$delroomno','$delroomprice','$qdroomno','$qdroomprice','$sturoomno','$sturoomprice','$parking','$wifi','$laundry','$gym','$pool','$spa')";
 
 $sqltwo = "INSERT INTO hotelaccesslist (username, password, status)
 VALUES ('$emailid','$pass','$status')";
@@ -65,14 +111,14 @@ if (mysqli_query($conn, $sqlone)) {
     echo "<b>New record created successfully</b>";
 	} 
 else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    echo "Error: " . $sqlone . "<br>" . mysqli_error($conn);
 }
 
 if (mysqli_query($conn, $sqltwo)) {
     header('location: welcome_hotel.php');
 	} 
 else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    echo "Error: " . $sqltwo . "<br>" . mysqli_error($conn);
 }
 
 }
