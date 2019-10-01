@@ -1,0 +1,29 @@
+body {
+	font-family: "Lucidia Console","Courier New";
+	font-size : 20px;
+	background-color : #E3E2DF;
+}
+legend {
+	color : #5D001E;
+}
+td {
+	color : #9A1750;
+}
+h1 {
+	color : #EE4C7C;
+}
+fieldset:hover {
+	background-color : #E3AFBC;
+}
+.button {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  font-size : 20px;
+  color : #5D001E;
+  background-color : #E3AFBC;
+}
+
+.button:hover {
+  background-color: #9A1750; /* Green */
+  color: white;
+}

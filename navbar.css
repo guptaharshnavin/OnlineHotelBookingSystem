@@ -1,0 +1,51 @@
+* 
+{
+	box-sizing: border-box
+}
+body 	
+{
+	
+	font-family: "Lucidia Console","Courier New";
+	font-size : 20px;
+	background-color : #E3E2DF;
+}
+.navbar {
+  width: 100%;
+  background-color: #E3AFBC;
+  overflow: auto;
+}
+#color
+{
+
+	background-color : #E3E2DF;
+}
+.navbar a {
+  float: inherit;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    width: 25%;
+    text-align: center;
+}
+
+.navbar a:hover 
+{
+  background-color: #9A1750;
+}
+
+.navbar a.active 
+{
+  background-color: #9A1750;
+}
+
+@media screen and (max-width: 500px) 
+{
+  .navbar a 
+  {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}

@@ -1,0 +1,53 @@
+body {
+	font-family: "Lucidia Console","Courier New";
+	font-size : 20px;
+	background-color : #E3E2DF;
+}
+legend {
+	color : #5D001E;
+}
+td {
+	color : #9A1750;
+}
+h3 {
+	color : #9A1750;
+}
+h5 {
+	color : #9A1750;
+}
+h4 {
+	color : #9A1750;
+}
+h1 {
+	color : #EE4C7C;
+	text-shadow: 3px 2px red;
+}
+fieldset:hover {
+	background-color : #E3AFBC;
+}
+.button {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  font-size : 20px;
+  color : #5D001E;
+  background-color : #E3AFBC;
+  border-radius: 10px;
+}
+
+.button:hover {
+  background-color: #9A1750; /* Green */
+  color: white;
+}
+
+div {
+	border: 1px solid #5D001E;
+	text-align: center;
+	padding: 10px;
+	box-shadow: 10px 10px 5px #5D001E;
+	height:200px;
+	width:800px;
+	overflow:scroll;
+	overflow-x:hidden;
+	overflow-y:scroll;
+}
+tr:hover {background-color: #f5f5f5;}
